@@ -41,14 +41,14 @@ export default function Index() {
 
             if (r.erro) alert(r.erro);
              else 
-             alert ('Aluno Inserido');
+             toast.dark('Aluno Inserido');
         } else {
             let r = await api.alterar(idAlterando, nome, chamada, curso, turma);
             
             if (r.erro) alert(r.erro);
             
              else 
-             alert ('Aluno Alterado')
+             toast.dark('Aluno Alterado')
     
         }
         limparCampos();
