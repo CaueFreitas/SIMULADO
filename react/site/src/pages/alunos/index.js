@@ -102,7 +102,7 @@ export default function Index() {
     return (
         <Container>
             <ToastContainer />
-            <LoadingBar color="black" ref = {load} />
+            <LoadingBar color="red" ref = {load} />
             <Menu />
             <Conteudo>
                 <Cabecalho />
