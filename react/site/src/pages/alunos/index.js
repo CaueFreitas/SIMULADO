@@ -47,13 +47,11 @@ export default function Index() {
         if(chamada< 0)
         return  toast.error('Não pode  inserir número negativo')
 
-       
-
         if(nome === '')
         return toast.error("O Campo Nome Precisa ser Preenchido!");
     
         if(chamada === '')
-        return toast.error("O Campo Chamada Precisa ser Preenchido!");
+        return toast.error("O Campo Chamada     Precisa ser Preenchido!");
     
         if(curso  === '')
         return toast.error("O Campo Curso Precisa ser Preenchido!");
