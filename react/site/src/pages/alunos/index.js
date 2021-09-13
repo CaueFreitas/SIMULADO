@@ -45,19 +45,19 @@ export default function Index() {
     async function inserir(){
         
         if(chamada< 0)
-        return  toast.error('Não pode  inserir número negativo')
+        return  toast.error('Não insira números negativos!')
 
         if(nome === '')
-        return toast.error("O Campo Nome Precisa ser Preenchido!");
+        return toast.error("O campo nome precisa ser preenchido!");
     
         if(chamada === '')
-        return toast.error("O Campo Chamada Precisa ser Preenchido!");
+        return toast.error("O campo chamada precisa ser preenchido!");
     
         if(curso  === '')
-        return toast.error("O Campo Curso Precisa ser Preenchido!");
+        return toast.error("O campo curso precisa ser preenchido!");
     
         if(turma  === '')
-        return toast.error("O Campo Turma Precisa ser Preenchido!");
+        return toast.error("O campo turma precisa ser preenchido!");
 
         if (idAlterando == 0 ) {
         let r = await api.inserir(nome, chamada, curso, turma);
