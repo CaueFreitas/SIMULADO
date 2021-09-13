@@ -51,7 +51,7 @@ export default function Index() {
         return toast.error("O Campo Nome Precisa ser Preenchido!");
     
         if(chamada === '')
-        return toast.error("O Campo Chamada     Precisa ser Preenchido!");
+        return toast.error("O Campo Chamada Precisa ser Preenchido!");
     
         if(curso  === '')
         return toast.error("O Campo Curso Precisa ser Preenchido!");
