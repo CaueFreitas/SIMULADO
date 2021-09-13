@@ -33,13 +33,39 @@ export default function Index() {
         load.current.complete();
     }
 
+    const validarResposta = (resp) => {
+       
+        
+        if (!resp.erro)
+            return true;
+            toast.error(`${resp.erro}`);
+        return false;
+    }
+
     async function inserir(){
         
+        if(chamada< 0)
+        return  toast.error('Não pode  inserir número negativo')
+
+       
+
+        if(nome === '')
+        return toast.error("O Campo Nome Precisa ser Preenchido!");
+    
+        if(chamada === '')
+        return toast.error("O Campo Chamada Precisa ser Preenchido!");
+    
+        if(curso  === '')
+        return toast.error("O Campo Curso Precisa ser Preenchido!");
+    
+        if(turma  === '')
+        return toast.error("O Campo Turma Precisa ser Preenchido!");
 
         if (idAlterando == 0 ) {
         let r = await api.inserir(nome, chamada, curso, turma);
 
-            if (r.erro) alert(r.erro);
+        if (!validarResposta(r)) 
+        return      
              else 
              toast.dark('Aluno Inserido');
         } else {
