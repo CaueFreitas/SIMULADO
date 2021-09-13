@@ -22,8 +22,9 @@ app.post('/matricula', async (req, resp) => {
         
         let { nome, chamada, curso, turma } = req.body;
         let e = await db.tb_matricula.findOne({ where: { nm_turma: turma, nr_chamada: chamada } })
-        if(e != null)
+        if(e != null){
         resp.send({ erro: "Já existe um aluno nessa turma com o mesmo número!"})
+        } else {
         let r = await db.tb_matricula.create({
             nm_aluno: nome,
             nr_chamada: chamada,
@@ -31,7 +32,7 @@ app.post('/matricula', async (req, resp) => {
             nm_turma: turma
         })
         resp.send(r);
-
+    }
     } catch (e) {   
         resp.send({ erro: "Insera o campo corretamente!" })
         
